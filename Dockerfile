@@ -1,4 +1,4 @@
-FROM python:3.12.4-alpine3.18
+FROM python:3.12.7-alpine3.19
 LABEL mantainer='giovannihettwer2@gmail.com'
 
 # Essa variável de ambiente é usada para controlar se o Python deve 
@@ -12,7 +12,7 @@ ENV PYTHONUNBUFFERED 1
 
 # Copia a pasta "djangoapp" e "scripts" para dentro do container.
 COPY djangoapp /djangoapp
-COPY scripts /scripts
+COPY ./scripts/commands.sh /scripts/commands.sh
 
 # Entra na pasta djangoapp no container
 WORKDIR /djangoapp
