@@ -12,7 +12,7 @@ ENV PYTHONUNBUFFERED 1
 
 # Copia a pasta "djangoapp" e "scripts" para dentro do container.
 COPY djangoapp /djangoapp
-COPY ./scripts/commands.sh /scripts/commands.sh
+COPY scripts/ /scripts/
 
 # Entra na pasta djangoapp no container
 WORKDIR /djangoapp
@@ -38,6 +38,8 @@ RUN python -m venv /venv && \
   chmod -R 755 /data/web/static && \
   chmod -R 755 /data/web/media && \
   chmod -R +x /scripts
+
+ENTRYPOINT ["/bin/sh", "/scripts/commands.sh"]
 
 # Adiciona a pasta scripts e venv/bin 
 # no $PATH do container.
