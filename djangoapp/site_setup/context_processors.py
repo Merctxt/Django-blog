@@ -1,7 +1,8 @@
 from site_setup.models import SiteSetup
 
-def Site_setup(request):
+def site_setup(request):
     setup = SiteSetup.objects.order_by('-id').first()
+
     return {
-        'Site_setup': setup
+        'site_setup': setup,
     }
