@@ -61,6 +61,6 @@ Para parar os serviços, use:
    ```bash
    docker-compose down
 
-📝 Licença
-
-Este projeto é licenciado sob a Licença MIT.
+## 📝 Licença
+Este projeto está licenciado sob os termos da [Licença MIT](./LICENSE).  
+Consulte o arquivo para mais detalhes.
