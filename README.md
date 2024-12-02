@@ -18,22 +18,49 @@ explorando conceitos essenciais de desenvolvimento web com Python.
 - **Bootstrap** (opcional para estilização)
 
 ## 📦 Como usar
-1. Clone o repositório:
+1. Clonar o Repositório
+Clone este repositório para sua máquina local:
    ```bash
    git clone https://github.com/Merctxt/Django-blog.git
+   cd Django-blog
 
-2. Instale as dependências:
+<br>
+
+2. Construir e Iniciar os Containers com Docker
+Certifique-se de que o Docker está instalado e funcionando. Depois, execute:
    ```bash
-   pip install -r requirements.txt
+   docker-compose up --build
 
-3. Aplique as migrações:
+Este comando irá construir as imagens necessárias e iniciar os serviços definidos no arquivo docker-compose.yml e no DockerFile.
+
+<br>
+
+3. Acessar a Aplicação
+Após iniciar os containers, acesse a aplicação no navegador:
    ```bash
-   python manage.py migrate
+   http://127.0.0.1:8000/
 
-4. Inicie o servidor local:
+<br>
+
+4. Executar Migrações (se necessário)
+Caso precise aplicar migrações no banco de dados, utilize:
    ```bash
-   python manage.py runserver
+   docker-compose exec web python manage.py migrate
 
-5. Acesse no navegador:
-  ```bash
-  http://127.0.0.1:8000/
+<br>
+
+5. Criar um Superusuário (para acessar o admin)
+Para criar um usuário administrador, execute:
+   ```bash
+   docker-compose exec web python manage.py createsuperuser
+
+<br>
+
+6. Parar os Containers
+Para parar os serviços, use:
+   ```bash
+   docker-compose down
+
+📝 Licença
+
+Este projeto é licenciado sob a Licença MIT.
